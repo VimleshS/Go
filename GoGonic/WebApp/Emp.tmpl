@@ -1,0 +1,16 @@
+{{define "body"}}
+	<table class ="table table-condensed table-bordered table-striped">
+		<tr>
+			<th class= "text-center">Id</th>
+			<th class= "text-center" >Name</th>
+			<th class= "text-center">Age</th>
+		</tr>
+	{{ range .}}
+		<tr class= "text-center">
+			<td>{{.Id}}</td>
+			<td>{{.Name}}</td>
+			<td>{{.Age}}</td>
+		</tr>
+	{{end}}
+	</table>
+{{end}}

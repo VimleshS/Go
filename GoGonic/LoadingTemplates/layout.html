@@ -1,0 +1,17 @@
+{{define "base"}}
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Layout test</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Header</h1>
+            {{template "body" .}}
+            <h1>Footer</h1>
+        </div>
+    </body>
+</html>
+ 
+{{end}}
