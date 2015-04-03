@@ -1,0 +1,32 @@
+{{define "layout"}}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{template "title"}}</title>
+  <link rel="stylesheet" href="/static/stylesheets/main.css">
+
+    <link rel="stylesheet" href="/static/stylesheets/datepicker.css">
+    <link rel="stylesheet" href="/static/libs/css/bootstrap.css">
+	<script type="text/javascript" src="/static/stylesheets/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="/static/libs/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/static/stylesheets/bootstrap-datepicker.js"></script> 
+ 
+
+</head>
+<body>
+		<div>
+
+			<select> 
+				{{range .SurveyList}}
+				 <option value="{{.Id}}">{{.SurveyName}}</option>
+				{{end}}
+			<select>
+		</div>
+
+
+
+  {{template "body" .SurveyList}}
+</body>
+</html>
+{{end}}

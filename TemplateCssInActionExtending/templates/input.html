@@ -1,0 +1,67 @@
+{{define "title"}}A templated page{{end}}
+
+{{define "body"}}
+<form name="input-form" class="input-form"  action="/input" method="post">	
+		<div class="header">
+		<h1>Select Input</h1>
+		<span>Please, fill this form</span>
+		</div>
+	
+		<!--<div class="content">		   
+			FromDate :<input name="frDate" class="datetime" type="date" >			
+			ToDate :<input name="toDate" type="date" >		
+		</div> -->
+		<div>
+			<select> 
+				{{range .}}
+				 <option value="{{.Id}}">{{.SurveyName}}</option>
+				{{end}}
+			<select>
+		</div>
+
+		<div class="col-xs-12">
+			<div class="label label-info col-xs-2"><strong>From Date :</strong></div>
+			<div class="input-append date datepicker  col-xs-4" data-date-format="dd-mm-yyyy">
+			    <input class="input-medium" size="16" type="text"><span class="add-on"><i class="icon-th"></i></span>
+			</div>
+			<div class="label label-info col-xs-2"><strong>To Date :</strong></div>
+			<div class="input-append date datepicker  col-xs-4 pull-right" data-date-format="dd-mm-yyyy">
+			    <input class="input-medium" size="16" type="text"><span class="add-on"><i class="icon-th"></i></span>
+			</div>
+		</div>
+		<div class="footer">		
+			<input class="btn btn-success btn-sm" type="submit" value="Save">
+		</div>
+</form>
+<style>
+.datepicker-dropdown{
+	margin-top:15px;
+}
+.label-info{
+	margin-top: 5px;
+}
+</style>
+
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        // adding todays date as the value to the datepickers.
+        var d = new Date();
+        var curr_day = d.getDate();
+        var curr_month = d.getMonth() + 1; //Months are zero based
+        var curr_year = d.getFullYear();
+        var eutoday = curr_day + "-" + curr_month + "-" + curr_year;
+        var ustoday = curr_month + "-" + curr_day + "-" + curr_year;
+        $("div.datepicker input").attr('value', eutoday);
+        $("div.usdatepicker input").attr('value', ustoday);
+
+        //calling the datepicker for bootstrap plugin
+        // https://github.com/eternicode/bootstrap-datepicker
+        // http://eternicode.github.io/bootstrap-datepicker/
+        $('.datepicker').datepicker({
+            autoclose: true            
+        });
+    });
+ 
+</script>
+{{end}}

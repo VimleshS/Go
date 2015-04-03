@@ -1,0 +1,21 @@
+{{define "title"}}LOGIN PAGE{{end}}
+
+{{define "body"}}
+<form name="login-form" class="login-form" action="/save" method="post">
+	
+		<div class="header">
+		<h3>Enter User/Password</h3>
+		</div>
+	
+		<div class="content">
+		<input name="username" type="text" class="input username" placeholder="Username" />
+		<div class="user-icon"></div>
+		<input name="password" type="password" class="input password" placeholder="Password" />
+		<div class="pass-icon"></div>		
+		</div>
+
+		<div class="footer">
+		<input class="button" value="LOGIN" type="submit" >
+		</div>	
+</form>
+{{end}}

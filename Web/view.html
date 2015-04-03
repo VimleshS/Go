@@ -1,0 +1,13 @@
+<h1>{{.Title}}</h1>
+<p> Wellcome to my Page </p>
+<p>[<a href="/edit/{{.Title}}">edit</a>]</p>
+
+<div>{{printf "%s" .Body}}</div>
+
+<div>
+	<select> 
+		{{range .SurveyList}}
+		 <option value="{{.Id}}">{{.SurveyName}}</option>
+		{{end}}
+	<select>
+</div>

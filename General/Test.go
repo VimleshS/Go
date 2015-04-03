@@ -1,13 +1,25 @@
+// +build Omit
+
 package main
 
 import (
+	"encoding/base64"
 	"errors"
 	"fmt"
 	"unicode/utf8"
 )
 
 func main() {
+	fmt.Println(base64.StdEncoding.EncodeToString([]byte("Vimlesh.Sharma@synerzip.com" + ":" + "newPass1")))
+	//fmt.Println(base64.StdEncoding.DecodeString([]byte("21KQV3Z4NL77XVISQNWTFADN1" + ":" + "80Twrr3oDxCJ90SvYrMzy5kNBhvGM0S4O/tyWZ+/TT8")))
+	//	auth := "21KQV3Z4NL77XVISQNWTFADN1" + ":" + "80Twrr3oDxCJ90SvYrMzy5kNBhvGM0S4O//tyWZ+//TT8"
+
+	auth := "51FHLL8SATEVYG283J7IJHI0L" + ":" + "JzxVfiLsgemVnYsbAiAQfNOegZ+B2/vE1PkWRzGXNYI"
+
+	fmt.Println(base64.StdEncoding.EncodeToString([]byte(auth)))
+
 	TestArraySlice()
+	//panic("ooooooo")
 	//CheckSliceModification()
 	//CheckMap()
 	//CheckSliceIteration()
@@ -18,6 +30,8 @@ func main() {
 	//}
 
 }
+
+// end Omit
 
 func CheckPanicAndRecoverUsage(i, j int) (k int, err error) {
 	defer func() {
